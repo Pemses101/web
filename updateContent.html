@@ -14,9 +14,10 @@
         function updateWebpage() {
             var newContent = document.getElementById('newContent').value;
 
-            // Use window.name to pass data between windows
-            window.opener.name = newContent;
-            window.close();
+            // Call the updateContent function in the parent window
+            if (window.opener && window.opener.updateContentFunction) {
+                window.opener.updateContentFunction(newContent);
+            }
         }
     </script>
 </body>

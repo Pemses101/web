@@ -12,6 +12,16 @@
         function updateContent(newContent) {
             document.getElementById('content').innerHTML = newContent;
         }
+
+        function openUpdateContentPage() {
+            var updateContentWindow = window.open('updateContent.html', '_blank');
+            updateContentWindow.addEventListener('DOMContentLoaded', function () {
+                // Pass a reference to the updateContent function to the opened window
+                updateContentWindow.updateContentFunction = updateContent;
+            });
+        }
     </script>
+
+    <button onclick="openUpdateContentPage()">Open Update Content Page</button>
 </body>
 </html>

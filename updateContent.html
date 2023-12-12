@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Content Page</title>
+</head>
+<body>
+    <label for="newContent">New Content:</label>
+    <input type="text" id="newContent" placeholder="Enter new content">
+    <button onclick="updateWebpage()">Update Webpage</button>
+
+    <script>
+        function updateWebpage() {
+            var newContent = document.getElementById('newContent').value;
+
+            // Use window.name to pass data between windows
+            window.opener.name = newContent;
+            window.close();
+        }
+    </script>
+</body>
+</html>

@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage to be Updated</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+
+        #greeting-message {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: block; /* Display the greeting message by default */
+        }
+    </style>
 </head>
 <body>
-    <h1 id="content">Initial Content</h1>
+    <iframe src="https://sabuss.com/klickvtu3?dashboard" id="embeddedSite"></iframe>
 
-    <script>
-        function updateContent(newContent) {
-            document.getElementById('content').innerHTML = newContent;
-        }
-
-        function openUpdateContentPage() {
-            var updateContentWindow = window.open('updateContent.html', '_blank');
-            updateContentWindow.addEventListener('DOMContentLoaded', function () {
-                // Pass a reference to the updateContent function to the opened window
-                updateContentWindow.updateContentFunction = updateContent;
-            });
-        }
-    </script>
-
-    <button onclick="openUpdateContentPage()">Open Update Content Page</button>
+    <div id="greeting-message">Welcome to the VTU Dashboard!</div>
 </body>
 </html>
